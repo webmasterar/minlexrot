@@ -31,7 +31,7 @@
 # and a space complexity of O(ceil(n / g)).
 #
 # A quadratic factor in the time complexity is not an attractive attribute for any algorithm, however, when ceil(n / g) = 1,
-# the algorithm runs in linear time O(n) and space O(1).
+# the algorithm runs in linear time O(n) and uses one computer word of space (8 bytes on a 64 bit machine).
 #
 # The size of g is determined by w and a, the size of a computer word and the size of the alphabet. The algorithm uses
 # up to ceil(log_2(a)) bits to store each letter in a computer word (i.e. 64-bits). For a text T over the DNA alphabet
@@ -61,12 +61,12 @@ SIZEOF_WORD = 64
 
 
 def calculate_how_many_letters_fit_into_word(A, algo) -> int:
-	len_A = len(A)
-	
-	if algo == ALGO_KR:
-		return int( math.floor( SIZEOF_WORD / math.log(len_A, 2) ) )
-	else:
-		return int( math.floor( SIZEOF_WORD / math.ceil( math.log(len_A, 2) ) ) )
+    len_A = len(A)
+
+    if algo == ALGO_KR:
+        return int( math.floor( SIZEOF_WORD / math.log(len_A, 2) ) )
+    else:
+        return int( math.floor( SIZEOF_WORD / math.ceil( math.log(len_A, 2) ) ) )
 
 
 def calculate_how_many_words_for_text(T, letters_per_word) -> int:
