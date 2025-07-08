@@ -70,7 +70,7 @@ def _check_counts_better(min_counts, curr_counts, a):
     return False
 
 
-def minlexrot_count(seq, A):
+def min_lex_rot_count(seq, A):
     n = len(seq)
     a = len(A)
     start_pos = 0
@@ -136,7 +136,7 @@ if __name__ == '__main__':
     T = args.text
     A = args.alphabet
     n = len(T)
-    start_pos, end_pos = minlexrot_count(T, A)
+    start_pos, end_pos = min_lex_rot_count(T, A)
     # print(T)
     # print(start_pos, end_pos)
     TT = T + T
